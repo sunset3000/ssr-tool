@@ -261,6 +261,7 @@ install_config() {
                 echo -e "${red}Error:${plain} /boot/grub2/grub.cfg not found, please check it."
                 exit 1
             fi
+            grub2-mkconfig -o /boot/grub2/grub.cfg
             grub2-set-default 0
         fi
     elif [[ x"${release}" == x"debian" || x"${release}" == x"ubuntu" ]]; then
